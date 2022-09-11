@@ -1,6 +1,6 @@
 const got = require('../node_modules/got-cjs').got
 const cheerio = require('../node_modules/cheerio')
-const net = require('../node_modules/net')
+const net = require('net')
 const clm = require('../node_modules/country-locale-map')
 
 const getPeer = (asn) => {
