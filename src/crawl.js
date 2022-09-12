@@ -115,7 +115,7 @@ const getPrefixsInfo = (perfixs) => {
         let country = clm.getCountryNameByAlpha2(prefix[3])
         if (typeof country === 'undefined') country = prefix[3]
         result.push({
-          prefix: prefix[2].replace(' ',''),
+          prefix: prefix[2].replaceAll(' ',''),
           countryCode: prefix[3],
           country: country
         })
