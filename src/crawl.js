@@ -110,12 +110,12 @@ const getPrefixsInfo = (perfixs) => {
     client.on("close", () => {
       let prefixsDataArray = received.split('\n')
       prefixsDataArray.pop()
-      for (let prefix of prefixsDataArray) {
+      for (let [index,prefix] of prefixsDataArray.entries()) {
         prefix = prefix.split(' | ')
         let country = clm.getCountryNameByAlpha2(prefix[3])
         if (typeof country === 'undefined') country = prefix[3]
         result.push({
-          prefix: prefix[2].replaceAll(' ',''),
+          prefix: perfixs[index],
           countryCode: prefix[3],
           country: country
         })
